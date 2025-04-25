@@ -1,0 +1,11 @@
+/* src/Home.css */
+
+/* Style for Home component */
+.hero {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Add gradient or background */
+    padding: 50px;
+  }
+  .features {
+    background-color: #87a9cb;  /* Light background for Features section */
+  }
+  
