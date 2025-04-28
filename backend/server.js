@@ -17,6 +17,9 @@ const app = express();
 
     app.use('/api/databooks', require('./routes/databooks'));
     app.use('/api/music', require('./routes/music'));
+    app.use('/api/feedback', require('./routes/feedback'));
+    app.use('/api/auth', require('./routes/authRoutes'));  //login and signup page
+
 
 
     const PORT = process.env.PORT || 5000;
