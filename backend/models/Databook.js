@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 
-const databookSchema = new mongoose.Schema({
-    Rating: Number,
-    Reviews: String, // Stored as "3,829"
-    Book_title: String,
-    Description: String,
-    Number_Of_Pages: Number,
-    Type: String,
-    Price: Number
-}, {
-    timestamps: true // adds createdAt and updatedAt
+const DatabookSchema = new mongoose.Schema({
+  rank: Number,
+  title: String,
+  price: Number,
+  rating: Number,
+  author: String,
+  year_of_publication: Number,
+  genre: String,
+  url: String,
 });
 
-module.exports = mongoose.model('Databook', databookSchema);
+module.exports = mongoose.model('Databook', DatabookSchema);

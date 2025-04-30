@@ -16,36 +16,26 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import Music from './pages/Music';
-
-
+import Podcasts from './pages/Podcasts';
+import Movie from './pages/Movie';
 import Books from './pages/Books';
-
-
-
 import axios from 'axios'; //for backend 
 
 function App() {
-
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-
-    AOS.init({
+ const [message, setMessage] = useState('');
+   useEffect(() => {
+   AOS.init({
       duration: 1000, // animation duration
       once: true      // only animate once
     }); 
-
     axios.get('/')
       .then(res => setMessage(res.data.message))
       .catch(err => console.log(err));
   }, []);
-  //  This is for backend testing that the backend is running
   return (
 
    <div className="SUGGESTIFY">
-     
-    
-     <Header />
+      <Header />
        <Routes>
          <Route path="/" element={<Home />} />
          <Route path="/about" element={<About />} />
@@ -55,14 +45,11 @@ function App() {
          <Route path="/signup" element={<Signup />} />
          <Route path="/profile" element={<Profile/>}/>
          <Route path="/music" element={<Music/>}/>
-        
+         <Route path="/podcasts" element={<Podcasts />} />
+         <Route path="/movies" element={<Movie />} />
          <Route path="/books" element={<Books/>}></Route>
        </Routes>
-       <Footer />
-     
-    
-  
-     
+       <Footer />  
     </div>
   );
 }

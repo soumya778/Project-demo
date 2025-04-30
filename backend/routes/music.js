@@ -1,31 +1,18 @@
+// routes/music.js
 const express = require('express');
 const router = express.Router();
-const Music = require('../models/music'); // Make sure this file exists
+const Music = require('../models/Music');
 
-// @desc    Get all songs or search by track/artist/genre
-// @route   GET /api/music
-// @query   ?search=keyword
+// GET all music data
 router.get('/', async (req, res) => {
-  const searchQuery = req.query.search;
-
-  let filter = {};
-  if (searchQuery) {
-    const regex = new RegExp(searchQuery, 'i'); // case-insensitive search
-    filter = {
-      $or: [
-        { Track: regex },
-        { Artist: regex },
-        { Genre: regex }
-      ]
-    };
-  }
-
   try {
-    const songs = await Music.find(filter).limit(5); // limit to 5 for performance
-    res.json(songs);
-  } catch (err) {
-    console.error('Error fetching music:', err);
-    res.status(500).json({ error: 'Server error while fetching music data.' });
+    console.log('Fetching music data...');
+    const allMusic = await Music.find().limit(6);
+    console.log(allMusic);  // Logs the fetched data
+    res.json(allMusic);
+  } catch (error) {
+    console.log('Error:', error);  // Log the error if something goes wrong
+    res.status(500).json({ message: "Failed to fetch music data", error });
   }
 });
 

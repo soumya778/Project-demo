@@ -54,22 +54,28 @@
 .hero-section {
   background: url('https://via.placeholder.com/1500x800') no-repeat center center;
   background-size: cover;
+  background: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 100%);
+  color: #2f2f2f;
+  
   padding: 120px 0;
-  color: rgb(35, 14, 2);
+
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
 .hero-section h1 {
-  font-size: 3.5rem;
+  font-size: 5.5rem;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(157, 14, 14, 0.7);
+  text-shadow: 2px 2px 4px rgba(75, 42, 224, 2.0);
 }
 
 .hero-section p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 2.0rem;
+  padding-top: 5%;
+  margin-bottom: 80px;
+  font-family:fantasy;
+  color:#1a1a1a;
 }
 
 #features h2 {
@@ -123,6 +129,10 @@
 .feature-button:hover {
   background-color: #2d6a4f;
   transform: scale(1.05);
+}
+.feature-card {
+  max-width: 280px;
+  margin: auto;
 }
 
 
@@ -225,23 +235,48 @@
 .glass-card:hover {
   transform: translateY(-8px);
 }
-.explore-btn {
-  background: linear-gradient(135deg, #00f2fe, #4facfe);
+.option-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
   border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 0.75rem 2rem;
-  border-radius: 50px;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-  box-shadow: 0 0 10px #4facfe, 0 0 40px #00f2fe;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  box-shadow: 4px 4px 12px #aaa, -4px -4px 12px #fff;
+  transition: all 0.3s ease;
+  margin: 10px;
 }
 
-.explore-btn:hover {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #4facfe, 0 0 60px #00f2fe;
+.option-btn:hover {
+  background: linear-gradient(135deg, #00f5ff, #7b00ff);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.4), 0 0 30px rgba(123, 0, 255, 0.3);
+}
+
+
+.explore-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 180deg at 50% 50%, #00f5ff, #ff00f7, #00f5ff);
+  animation: rotateGradient 4s linear infinite;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .explore-btn::before {
@@ -251,7 +286,7 @@
   left: -75%;
   width: 50%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(64, 38, 38, 0.2);
   transform: skewX(-25deg);
   transition: 0.5s;
 }
@@ -259,4 +294,510 @@
 .explore-btn:hover::before {
   left: 130%;
 }
+/* App.css or Features.css */
+h2.text-center.mb-5 {
+  font-size: 2.5rem;
+  background-color: #00f5ff;
+  color: #007bff;
+  animation: fadeIn 2s ease-in-out;
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+.feature-card {
+  background: linear-gradient(135deg, #542c2c, #f1f3f5);
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(45, 9, 9, 0.15);
+}
+
+.feature-card .card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #123a62;
+}
+
+.feature-card .card-text {
+  color:#1a1322;
+  font-size: 0.95rem;
+}
+
+.feature-card:nth-child(1) {
+  background: linear-gradient(135deg, #bdac5d, #eae192);
+}
+
+.feature-card:nth-child(2) {
+  background: linear-gradient(135deg, #4fc3f7, #81d4fa);
+}
+
+.feature-card:nth-child(3) {
+  background: linear-gradient(135deg, #ba68c8, #ce93d8);
+}
+
+.feature-card:nth-child(4) {
+  background: linear-gradient(135deg, #81c784, #a5d6a7);
+}
+
+button.btn-lg {
+  background: linear-gradient(to right, #3b5eb0, #05215a);
+  border: none;
+  color: rgb(209, 192, 192);
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+button.btn-lg:hover {
+  background: linear-gradient(to right, #182848, #4b6cb7);
+}
+
+.smallbtn{
+  width: 12%;
+}
+/* Dark Modal Style */
+/* Glassmorphism Modal */
+.glass-modal .modal-content {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  animation: glassIn 0.5s ease-out forwards;
+}
+
+@keyframes glassIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  background-color: rgba(0, 123, 255, 0.8);
+  color: white;
+}
+
+.modal-body {
+  color: white;
+}
+
+button:focus {
+  outline: none;
+}
+
+button {
+  border: 2px solid white;
+}
+
+.feature-heading {
+  background-color: #ff6f61; /* coral red background */
+  color: rgb(167, 72, 72);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(77, 40, 40, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-heading:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.features-section {
+  padding: 4rem 0;
+  background-color: #ce817a;  /* Coral red background color */
+  color: rgb(54, 22, 22);  /* White text color for better contrast */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* Optional: add shadow for depth */
+}
+
+
+
+/* Add this to App.css or a new About.css file */
+.about-page {
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient from purple to blue */
+  color: #fff; /* White text color for contrast */
+  padding: 6rem 0; /* More padding for a spacious feel */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.about-page h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for a nice 3D effect */
+}
+
+.about-page h4 {
+  font-family: 'Roboto', sans-serif;
+  color: #f7f9fc; /* Lighter color for subheadings */
+}
+
+.card {
+  border: none; /* Remove card borders */
+  background: rgba(255, 255, 255, 0.85); /* Light transparent background */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #2575fc; /* Highlight titles with a blue shade */
+}
+
+.card-text {
+  color: #333;
+  font-size: 1rem;
+}
+
+.card-body {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Hover Effect on Cards */
+.card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Optional: Add a subtle effect on the text */
+.about-page p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 300; /* Lighter font weight for better readability */
+}
+/* Add this to App.css or a new FAQ.css file */
+#faq {
+  background: linear-gradient(to right, #783e30, #feb47b); /* Gradient background (peach to light orange) */
+  color: #fff; /* White text for better contrast */
+  padding: 4rem 0; /* More padding for a spacious feel */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#faq h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+}
+
+.accordion-button {
+  background-color: #fff; /* White button background */
+  color: #ff7e5f; /* Match the gradient theme */
+  font-weight: bold;
+  padding: 1.25rem; /* Increased padding for better readability */
+  border-radius: 8px; /* Rounded corners for buttons */
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+  background-color: #feb47b; /* Hover effect for a nice contrast */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #feb47b; /* Change background when expanded */
+  color: #fff; /* Text color when expanded */
+}
+
+.accordion-item {
+  border: none; /* Remove borders for a cleaner look */
+  margin-bottom: 1rem; /* Space between accordion items */
+  border-radius: 8px; /* Rounded corners for items */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow on each item */
+}
+
+.accordion-body {
+  background-color: #fff; /* White background for the body */
+  color: #333; /* Dark text for readability */
+  padding: 1.5rem; /* Extra padding inside the body */
+  font-size: 1.1rem;
+}
+
+/* Optional: Add a subtle animation for the accordion items */
+.accordion-item[data-aos] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.accordion-item[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* App.css or Login.css */
+
+/* General styles */
+.auth-page {
+  background: linear-gradient(to right, #020347c4, #1a1322); /* Gradient background */
+  padding: 6rem 0;
+  min-height: 100vh;
+}
+
+/* Card Styling */
+.card {
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card-body {
+  padding: 3rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Inner shadow */
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-weight: 600;
+}
+
+input,
+button {
+  font-size: 1.1rem; /* Larger font for readability */
+}
+
+/* Input Fields */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 0 0.2rem rgba(37, 117, 252, 0.25); /* Blue focus effect */
+}
+
+/* Button */
+button {
+  background: #2575fc; /* Button gradient */
+  border: none;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #6a11cb; /* Darker on hover */
+}
+
+button:active {
+  background: #3a8dff; /* Lighter active state */
+}
+
+/* Links */
+.link-primary {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+.link-primary:hover {
+  text-decoration: underline;
+}
+
+/* Password visibility toggle button */
+input-group-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 576px) {
+  .auth-page {
+    padding: 4rem 0;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* src/App.css */
+.input-style {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.input-style:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 5px #2575fc;
+}
+
+.btn-hover {
+  background-color: #2575fc;
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  background-color: #6a11cb;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Landing.css */
+
+.landing-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #8b5cf6, #ec4899, #6366f1);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: pulse 6s infinite alternate;
+}
+
+.blob-pink {
+  background-color: #f9a8d4;
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+}
+
+.blob-purple {
+  background-color: #c4b5fd;
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  right: 5%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.landing-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  z-index: 10;
+  max-width: 600px;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: #facc15; /* Yellow */
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.highlight-pink {
+  color: #f9a8d4;
+}
+.highlight-blue {
+  color: #93c5fd;
+}
+.highlight-green {
+  color: #6ee7b7;
+}
+
+.landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  border: none;
+}
+
+.login-btn {
+  background-color: #facc15;
+  color: #5b21b6;
+}
+
+.login-btn:hover {
+  background-color: #fde68a;
+}
+
+.signup-btn {
+  background-color: #818cf8;
+  color: white;
+}
+
+.signup-btn:hover {
+  background-color: #a5b4fc;
+}
+.auth-page {
+  min-height: 100vh;             /* ensure it fills the screen */
+  display: flex;                 /* turn on flexbox */
+  align-items: center;           /* vertically center its contents */
+  justify-content: center;       /* horizontally center */
+  background-color: #f7f9fc;     /* light background so the form shows */
+}
+.toast-container {
+  z-index: 100;
+}
+.auth-page {
+  z-index: 200;
+}

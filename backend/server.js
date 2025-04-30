@@ -19,8 +19,8 @@ const app = express();
     app.use('/api/music', require('./routes/music'));
     app.use('/api/feedback', require('./routes/feedback'));
     app.use('/api/auth', require('./routes/authRoutes'));  //login and signup page
-
-
+    app.use('/api/podcasts', require('./routes/podcasts'));
+    app.use('/api/movies', require('./routes/movies'));
 
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));

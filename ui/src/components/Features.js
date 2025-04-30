@@ -77,31 +77,64 @@ const Features = () => {
     <section id="features" style={{ padding: '4rem 0', backgroundColor: '#f8f9fa' }}>
       <Container>
         <h2 className="text-center mb-5">Explore Our Features</h2>
-        
-       
 
         <Row className="align-items-center">
           {/* Left Carousel */}
           <Col md={6} data-aos="fade-right">
             <Carousel fade interval={3000} pause={false}>
-              {/* Slides */}
-              {/* ... same carousel code ... */}
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="/suggestify-logo.png"
+                  alt="Suggestify Logo"
+                  style={{ width: '600px', height: '600px', objectFit: 'contain' }}
+                />
+              </Carousel.Item>
             </Carousel>
           </Col>
 
           {/* Right Feature Cards */}
-          <Col md={6}>
-            <Row>
-              {/* Cards */}
-              <Col sm={12} className="mb-4" data-aos="fade-left">
-                <Card className="shadow-sm border-0 h-100">
+          <Col md={6} className="d-flex flex-column justify-content-center align-items-center">
+            <Row className="g-4 justify-content-center w-100">
+              {/* Book Card */}
+              <Col sm={6} className="d-flex justify-content-center" data-aos="fade-up">
+                <Card className="feature-card shadow-sm border-0 h-100 text-center">
                   <Card.Body>
                     <Card.Title><FaBook className="me-2" />Book Recommendations</Card.Title>
                     <Card.Text>Find the perfect read based on your mood, genre preference, and history.</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-              {/* ... other cards ... */}
+
+              {/* Movie Card */}
+              <Col sm={6} className="d-flex justify-content-center" data-aos="fade-up">
+                <Card className="feature-card shadow-sm border-0 h-100 text-center">
+                  <Card.Body>
+                    <Card.Title><FaFilm className="me-2" />Movie Magic</Card.Title>
+                    <Card.Text>Explore must-watch movies tailored to your taste and mood.</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              {/* Music Card */}
+              <Col sm={6} className="d-flex justify-content-center" data-aos="fade-up">
+                <Card className="feature-card shadow-sm border-0 h-100 text-center">
+                  <Card.Body>
+                    <Card.Title><FaMusic className="me-2" />Music Vibes</Card.Title>
+                    <Card.Text>Get music recommendations to match your mood or activity.</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              {/* Podcast Card */}
+              <Col sm={6} className="d-flex justify-content-center" data-aos="fade-up">
+                <Card className="feature-card shadow-sm border-0 h-100 text-center">
+                  <Card.Body>
+                    <Card.Title><FaPodcast className="me-2" />Podcast Picks</Card.Title>
+                    <Card.Text>Discover top podcasts curated for your interests and preferences.</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
             </Row>
 
             <div className="text-center mt-4" data-aos="zoom-in">
@@ -118,8 +151,8 @@ const Features = () => {
         </Row>
       </Container>
 
-      {/* Modal */}
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+      {/* Explore Modal */}
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered className="glass-modal">
         <Modal.Header closeButton>
           <Modal.Title>What do you want to explore?</Modal.Title>
         </Modal.Header>
@@ -128,16 +161,16 @@ const Features = () => {
             <Spinner animation="border" />
           ) : (
             <>
-              <Button variant="outline-dark" className="m-2" onClick={() => handleOptionSelect('Books')}>
+              <Button variant="outline-light" className="m-2" onClick={() => handleOptionSelect('Books')}>
                 📚 Books
               </Button>
-              <Button variant="outline-dark" className="m-2" onClick={() => handleOptionSelect('Music')}>
+              <Button variant="outline-light" className="m-2" onClick={() => handleOptionSelect('Music')}>
                 🎵 Music
               </Button>
-              <Button variant="outline-dark" className="m-2" onClick={() => handleOptionSelect('Movies')}>
+              <Button variant="outline-light" className="m-2" onClick={() => handleOptionSelect('Movies')}>
                 🎬 Movies
               </Button>
-              <Button variant="outline-dark" className="m-2" onClick={() => handleOptionSelect('Podcasts')}>
+              <Button variant="outline-light" className="m-2" onClick={() => handleOptionSelect('Podcasts')}>
                 🎙️ Podcasts
               </Button>
             </>
