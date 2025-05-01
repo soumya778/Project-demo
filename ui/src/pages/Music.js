@@ -22,6 +22,26 @@ const Music = () => {
     fetchSongs();
   }, []);
 
+  // useEffect(() => {
+  //   const fetchSongs = async () => {
+  //     try {
+  //       const endpoint = selectedArtist
+  //         ? `http://localhost:5000/api/music?artist=${encodeURIComponent(selectedArtist)}`
+  //         : `http://localhost:5000/api/music`;
+  
+  //       const res = await axios.get(endpoint);
+  //       setSongs(res.data);
+  //     } catch (err) {
+  //       console.error('Error fetching songs:', err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  
+  //   fetchSongs();
+  // }, [selectedArtist]); // ← 🔥 important!
+  
+
   // Hardcoded artist names
   const artists = ['Shreya Ghoshal', 'Pink Floyd', 'Pritam', 'Kishore Kumar'];
 
@@ -39,20 +59,7 @@ const Music = () => {
     <div className="container py-5">
       <h2 className="text-center mb-4">Tune into Your Mood 🎧</h2>
 
-      <div className="text-center mb-4">
-        <select
-          className="form-select w-50 mx-auto"
-          value={selectedArtist}
-          onChange={handleArtistChange}
-        >
-          <option value="">Select Artist</option>
-          {artists.map((artist, idx) => (
-            <option key={idx} value={artist}>
-              {artist}
-            </option>
-          ))}
-        </select>
-      </div>
+     
 
       {loading ? (
         <div className="text-center">

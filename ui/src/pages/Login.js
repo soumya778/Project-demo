@@ -106,7 +106,7 @@ const Login = () => {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
 
-      navigate('/'); // Redirect to dashboard after login
+      navigate('/home'); // Redirect to dashboard after login
     } catch (error) {
       console.error('Login Error:', error.response?.data?.message || error.message);
       alert(error.response?.data?.message || 'Login failed. Please try again.');

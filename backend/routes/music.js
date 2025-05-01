@@ -7,7 +7,7 @@ const Music = require('../models/Music');
 router.get('/', async (req, res) => {
   try {
     console.log('Fetching music data...');
-    const allMusic = await Music.find().limit(6);
+    const allMusic = await Music.find().limit(16);
     console.log(allMusic);  // Logs the fetched data
     res.json(allMusic);
   } catch (error) {
@@ -15,5 +15,30 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: "Failed to fetch music data", error });
   }
 });
+
+// router.get('/', async (req, res) => {
+//   try {
+//     const { artist } = req.query;
+
+//     let filter = {};
+//     if (artist) {
+//       filter.Artist = { $regex: new RegExp(artist, 'i') }; // Case-insensitive
+//     }
+
+//     console.log("Filter being applied:", filter); // 👈 log for debugging
+
+//     const songs = await Music.find(filter);
+//     console.log("Songs found:", songs.length); // 👈 log how many
+
+//     res.json(songs);
+//   } catch (err) {
+//     console.error('Error fetching music:', err);
+//     res.status(500).json({ error: 'Server error' });
+//   }
+// });
+
+
+
+
 
 module.exports = router;

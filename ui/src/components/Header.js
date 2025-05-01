@@ -14,9 +14,9 @@ export default function Header() {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={NavLink} to="/" end>
+            {/* <Nav.Link as={NavLink} to="/" end>
               Home
-            </Nav.Link>
+            </Nav.Link> */}
             <Nav.Link as={NavLink} to="/about">
               About
             </Nav.Link>
@@ -27,12 +27,12 @@ export default function Header() {
             <Nav.Link as={NavLink} to="/faq">
               FAQ
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/login">
+            {/* <Nav.Link as={NavLink} to="/login">
               Login
             </Nav.Link>
             <Nav.Link as={NavLink} to="/signup">
               Signup
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <Nav className="ms-3">
             <Nav.Link href="https://facebook.com"><FaFacebookF /></Nav.Link>
