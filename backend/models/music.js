@@ -31,4 +31,4 @@ const musicSchema = new mongoose.Schema({
   Stream: Number
 });
 
-module.exports = mongoose.model('Music', musicSchema);
+module.exports = mongoose.model('music', musicSchema);
