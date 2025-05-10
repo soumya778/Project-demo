@@ -43,16 +43,16 @@ const Features = () => {
       let endpoint = '';
       switch (option.toLowerCase()) {
         case 'books':
-          endpoint = '/api/databooks';
+          endpoint = '/databooks';
           break;
         case 'music':
-          endpoint = '/api/music';
+          endpoint = '/music';
           break;
         case 'movies':
-          endpoint = '/api/movies';
+          endpoint = '/movies';
           break;
         case 'podcasts':
-          endpoint = '/api/podcasts';
+          endpoint = '/podcasts';
           break;
         default:
           throw new Error('Invalid option selected');
